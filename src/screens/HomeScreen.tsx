@@ -20,14 +20,14 @@ const popularWorkouts = [
   {
     id: '1',
     title: 'Lower Body Training',
-    image: require('../../assets/images/lowbdytrn.png'),
+    image: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680811/lowbdytrn_m1rsxd.png',
     kcal: '500 kcal',
     time: '50 Min',
   },
   {
     id: '2',
     title: 'Hand Training',
-    image: require('../../assets/images/handtrain.png'),
+    image: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680810/handtrain_zcjqpr.jpg',
     kcal: '600 kcal',
     time: '30 Min',
   },
@@ -40,7 +40,7 @@ const todayPlans = [
     subtitle: '100 Push up a day',
     level: 'Intermediate',
     progress: 50,
-    image: require('../../assets/images/Push Up.png'),
+    image: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680820/Push_Up_kjwqfh.png',
   },
   {
     id: '2',
@@ -48,7 +48,7 @@ const todayPlans = [
     subtitle: '20 Sit up a day',
     level: 'Beginner',
     progress: 75,
-    image: require('../../assets/images/Sit Up.png'),
+    image: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680820/Sit_Up_ee8wfa.png',
   },
   {
     id: '3',
@@ -56,7 +56,7 @@ const todayPlans = [
     subtitle: '10 Knee Push Up a day',
     level: 'Beginner',
     progress: 75,
-    image: require('../../assets/images/Knee Push Up.png'),
+    image: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680809/Knee_Push_Up_cl9cng.png',
   },
 ];
 
@@ -94,7 +94,7 @@ export default function HomeScreen() {
                   : null
               }
             >
-              <Image source={item.image} style={styles.cardImage} />
+              <Image source={{ uri: item.image }} style={styles.cardImage} />
 
               <LinearGradient
                 colors={['rgba(0,0,0,0.5)', 'transparent']}
@@ -108,7 +108,7 @@ export default function HomeScreen() {
 
                 <View style={styles.infoRow}>
                   <Image
-                    source={require('../../assets/images/fire.png')}
+                    source={{ uri: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680810/fire_wnphxn.png' }}
                     style={styles.infoIcon}
                   />
                   <Text style={styles.infoText}>{item.kcal}</Text>
@@ -116,7 +116,7 @@ export default function HomeScreen() {
 
                 <View style={[styles.infoRow, { marginTop: 4 }]}>
                   <Image
-                    source={require('../../assets/images/minutes.png')}
+                    source={{ uri: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680810/minutes_srhqsy.png' }}
                     style={styles.infoIcon}
                   />
                   <Text style={styles.infoText}>{item.time}</Text>
@@ -137,7 +137,7 @@ export default function HomeScreen() {
         contentContainerStyle={{ paddingBottom: 100 }}
         renderItem={({ item }) => (
           <View style={styles.todayCard}>
-            <Image source={item.image} style={styles.todayImage} />
+            <Image source={{ uri: item.image }} style={styles.todayImage} />
             <View style={styles.todayContent}>
               <Text style={styles.todayTitle}>{item.title}</Text>
               <Text style={styles.todaySubtitle}>{item.subtitle}</Text>
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: 'Lato_400Regular',
     color: '#666',
-     marginTop: 30,
+    marginTop: 30,
   },
   name: {
     fontSize: 24,

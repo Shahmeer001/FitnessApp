@@ -14,25 +14,25 @@ export default function ExploreScreen() {
       title: 'Belly fat burner',
       duration: '10 min',
       level: 'Beginner',
-      image: require('../../assets/images/belly-fat.png'),
+      image: { uri: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680808/Belly_fat_burner_dorerd.png' },
     },
     {
       title: 'Lose Fat',
       duration: '10 min',
       level: 'Beginner',
-      image: require('../../assets/images/lose-fat.png'),
+      image: { uri: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680810/Lose_Fat_ankaow.png' },
     },
     {
       title: 'Plank',
       duration: '5 min',
       level: 'Expert',
-      image: require('../../assets/images/Plank.png'),
+      image: { uri: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680811/plank_copy_ecokji.png' },
     },
     {
       title: 'Build Wide',
       duration: '30 min',
       level: 'Intermediate',
-      image: require('../../assets/images/Build Whider Biceps.png'),
+      image: { uri: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680808/Build_Whider_Biceps_jzqgx1.png' },
     },
   ];
 
@@ -41,13 +41,13 @@ export default function ExploreScreen() {
       title: 'Leg exercises',
       duration: '10 min',
       level: 'Beginner',
-      image: require('../../assets/images/leg.png'),
+      image: { uri: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680810/leg_zssutq.png' },
     },
     {
       title: 'Backward lunges',
       duration: '5 min',
       level: 'Beginner',
-      image: require('../../assets/images/lunges.png'),
+      image: { uri: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680810/lunges_mg7zt2.png' },
     },
   ];
 
@@ -57,7 +57,7 @@ export default function ExploreScreen() {
         {/* Title Image Section */}
         <View style={styles.titleCard}>
           <Image
-            source={require('../../assets/images/workout.png')}
+            source={{ uri: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680828/workout_hany7u.png' }}
             style={styles.titleImage}
           />
           <View style={styles.titleOverlay}>
@@ -91,18 +91,18 @@ export default function ExploreScreen() {
         >
           <ChallengeCard
             title="Plank Challenge"
-            image={require('../../assets/images/plankC.png')}
+            image={{ uri: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680811/plankC_imgblf.png' }}
             color="#C4FF5E"
           />
           <ChallengeCard
             title="Sprint Challenge"
-            image={require('../../assets/images/Sprint.png')}
+            image={{ uri: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680821/Sprint_y3w3g8.png' }}
             color="#1D1D1D"
             isLight={false}
           />
           <ChallengeCard
             title="Squat Challenge"
-            image={require('../../assets/images/Sqt.png')}
+            image={{ uri: 'https://res.cloudinary.com/dgliirggm/image/upload/v1753680821/Sqt_rg9fhn.png' }}
             color="#F2F2F2"
           />
         </ScrollView>

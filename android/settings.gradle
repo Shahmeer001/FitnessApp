@@ -1,0 +1,40 @@
+pluginManagement {
+  def reactNativeGradlePlugin = new File(
+    ["node", "--print", "require.resolve('@react-native/gradle-plugin/package.json', { paths: [require.resolve('react-native/package.json')] })"]
+      .execute(null, rootDir)
+      .text
+      .trim()
+  ).parentFile.absolutePath
+  includeBuild(reactNativeGradlePlugin)
+
+  def expoPluginsPath = new File(
+    ["node", "--print", "require.resolve('expo-modules-autolinking/package.json', { paths: [require.resolve('expo/package.json')] })"]
+      .execute(null, rootDir)
+      .text
+      .trim()
+  ).toPath().resolve("../android/expo-gradle-plugin").normalize().toFile().absolutePath
+  includeBuild(expoPluginsPath)
+}
+
+plugins {
+  id("com.facebook.react.settings")
+  id("expo-autolinking-settings")
+}
+
+reactSettings {
+  if (System.getenv("EXPO_USE_COMMUNITY_AUTOLINKING") == "1") {
+    autolinkLibrariesFromCommand()
+  } else {
+    autolinkLibrariesFromCommand(expoAutolinking.rnConfigCommand)
+  }
+}
+
+expoAutolinking {
+  useExpoModules()
+  useExpoVersionCatalog()
+}
+
+rootProject.name = "FitnessApp"
+
+include(":app")
+includeBuild(expoAutolinking.reactNativeGradlePlugin)
